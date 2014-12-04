@@ -7,7 +7,7 @@ With this plugin you can select between two actions (when timeout has occured):
 
 1. `reconnect`, the default, reconnects each bot on which timeout has occured.
 
-2. `exit`, terminates nodejs application, this kills your bot or if you have more of them they will also be gone - usefull when you have more of them and they depend heavily on each other, like (irc bridge)[https://github.com/Tennu/BridgeBot]
+2. `exit`, terminates nodejs application, this kills your bot or if you have more of them they will also be gone - usefull when you have more of them and they depend heavily on each other, like [irc bridge](https://github.com/Tennu/BridgeBot)
 
 
 Setup
@@ -15,7 +15,7 @@ Setup
 
 1. Change directory to where `config.json` is (Tennu's bot config file).
 
-2. Copy timeout.js from repository to `./tennu_plugins/timeout.js`.
+2. Copy `timeout.js` from repository to `./tennu_plugins/timeout.js` (do create `tennu_plugins` subfolder).
 
 3. Edit `config.json` to have a `plugins` line to something like this:
 
