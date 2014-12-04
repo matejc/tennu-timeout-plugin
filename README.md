@@ -19,9 +19,9 @@ Setup
 
 3. Edit `config.json` to have a `plugins` line to something like this:
 
-```
-"plugins": ["timeout"],
-```
+    ```
+    "plugins": ["timeout"],
+    ```
 
 4. Run the bot.
 
@@ -31,7 +31,7 @@ Options
 
 - `timeout`: default is `600000` miliseconds which is 10min, which should be enough, if your bot is reconnecting after that many minutes, then increase the number. For example freenode servers have usually around 256 seconds before they issue Ping timeout, you want to have more than this.
 
-- `action`: default is `reconnect` which reconnects each bot that does not receive any raw data in `<timeout>` miliseconds (previous option), the alternative is `exit` which terminates the nodejs application with exit code 1.
+- `timeoutaction`: default is `reconnect` which reconnects each bot that does not receive any raw data in `<timeout>` miliseconds (previous option), the alternative is `exit` which terminates the nodejs application with exit code 1.
 
 
 
