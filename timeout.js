@@ -6,8 +6,9 @@ var TimeoutPlugin = {
         action = client._config.timeoutaction?client._config.timeoutaction:'reconnect';
 
         var startTimer = function() {
-            timer = setTimeout(function() {
+            client._socket.setTimeout(timeout, function () {
                 client.warn('Timeout', 'Will now do: ' + action);
+                console.log('Will now do: ' + action);
                 switch (action) {
                     case 'reconnect':
                         client.disconnect();
@@ -17,20 +18,13 @@ var TimeoutPlugin = {
                     case 'exit':
                         process.exit(1);
                 }
-            }, timeout);
-        };
-
-        var stopTimer = function() {
-            if (timer !== undefined) {
-                clearTimeout(timer);
-                timer = undefined;
-            }
+            });
         };
 
         return {
             handlers: {
-                'ping': function (command) {
-                    stopTimer();
+                '001': function (command) {
+                    console.log('Will now startTimer');
                     startTimer();
                 }
             }
